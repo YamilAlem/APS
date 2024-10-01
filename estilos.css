@@ -91,3 +91,13 @@ h1 {
 .link:hover {
     text-decoration: underline;
 }
+.header-row {
+    background-color: #fa7609; /* Color de fondo de la fila superior */;
+    color: white; /* Color del texto */
+    text-align: center;
+}
+.header-row2{background-color: hwb(181 13% 24%); /* Color de fondo de la fila superior */
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);}
+.table th, .table td {
+    text-align: center;
+}
