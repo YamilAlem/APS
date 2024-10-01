@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATENCION PRIMARIA DE SALUD-LA RIOJA</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header class="header">
+        <img src="Banner APS.png" alt="Imagen de Cabecera">
+    </header>
+
+    <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showCarousel()">INICIO</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        AGENTES SANITARIOS
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#" onclick="showContent('cronograma')">Cronograma de resumen de rondas</a>
+                        <a class="dropdown-item" href="#" onclick="showContent('evaluaciones')">Evaluaciones y capacitaciones</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="acuerdoDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ACUERDO DE GESTIÓN
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="acuerdoDropdown">
+                        <a class="dropdown-item" href="#" onclick="showContent('¿que_es?')">¿Que es?</a>
+                        <a class="dropdown-item" href="#" onclick="showContent('equipo')">Equipo</a>
+                        <a class="dropdown-item" href="#" onclick="showContent('cronograma_acuerdo')">Cronograma</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showContent('acceso_restringido')">USUARIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#footer">CONTACTO</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container content">
+        <div id="mainContent">
+            <div id="mainCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="carrusel2.png" class="d-block w-100" alt="Imagen 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="carrusel3.png" class="d-block w-100" alt="Imagen 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="carrusel4.png" class="d-block w-100" alt="Imagen 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="carrusel5.png" class="d-block w-100" alt="Imagen 4">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" id="footer">
+    
+    <div class="contact-images">
+        <a href="https://www.instagram.com/saludlarioja/?hl=es" target="_blank">
+            <img src="finstagram.png" alt="Instagram" class="img-fluid">
+        </a>
+        <a href="https://x.com/minsaludlrj" target="_blank">
+            <img src="fxtwitter.png" alt="Twitter" class="img-fluid">
+        </a>
+        <a href="https://www.facebook.com/minsaludlrj/?locale=es_LA" target="_blank">
+            <img src="fface.png" alt="Facebook" class="img-fluid">
+        </a>
+        <a href="mailto:atencionprimariadesaludlr@gmail.com?subject=Consulta&body=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios." target="_blank">
+            <img src="gmail-logo.png" alt="Gmail" class="img-fluid">
+        </a>
+    </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showContent(type) {
+            const contentDiv = document.getElementById('mainContent');
+            contentDiv.innerHTML = '';
+
+            if (type === 'cronograma') {
+                contentDiv.innerHTML = `
+                <h1>Presentacion de resumen de ronda 102<h1>    
+                <div class="card-deck">
+                        <div class="card">
+                            <img src="crono1.png" class="card-img-top" alt="Imagen 1">
+                        </div>
+                        <div class="card">
+                            <img src="crono2.png" class="card-img-top" alt="Imagen 2">
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'evaluaciones') {
+                contentDiv.innerHTML = `
+                    <div id="evaluacionesCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="eval1.png" class="d-block w-100" alt="Evaluación 1">
+                                <div class="carousel-caption d-none d-md-block">
+                                   
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="eval2.png" class="d-block w-100" alt="Evaluación 2">
+                                <div class="carousel-caption d-none d-md-block">
+                                    
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="eval3.png" class="d-block w-100" alt="Evaluación 3">
+                                <div class="carousel-caption d-none d-md-block">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#evaluacionesCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+                        <a class="carousel-control-next" href="#evaluacionesCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Siguiente</span>
+                        </a>
+                    </div>
+                `;
+            } else if (type === '¿que_es?') {
+                contentDiv.innerHTML = `
+                    <div class="text-center">
+                        <img src="https://via.placeholder.com/800x400" class="img-fluid" alt="¿que es?">
+                    </div>
+                `;
+            } else if (type === 'equipo') {
+                contentDiv.innerHTML = `
+                    <div class="text-center">
+                        <img src="equipos AG.png" class="img-fluid" alt="Estadísticas">
+                    </div>
+                `;
+            } else if (type === 'cronograma_acuerdo') {
+                contentDiv.innerHTML = `
+                    <div class="text-center">
+                        <img src="https://via.placeholder.com/800x400" class="img-fluid" alt="Cronograma">
+                    </div>
+                `;
+            } else if (type === 'acceso_restringido') {
+                contentDiv.innerHTML = `
+                    <div class="login-container mt-5">
+    <h2 class="login-header">Iniciar Sesión</h2>
+    <form>
+        <div class="form-group">
+            <label for="username">Nombre de Usuario</label>
+            <input type="text" class="form-control" id="username" placeholder="Ingrese su nombre de usuario" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+    </form>
+    <div class="text-center mt-3">
+        <a href="#" class="link">¿Olvidaste tu contraseña?</a>
+    </div>
+    <div class="text-center mt-2">
+        <button class="btn btn-secondary btn-block">Registrarse</button>
+    </div>
+</div>
+</div>
+                `;
+            }
+        }
+
+        function showCarousel() {
+            const contentDiv = document.getElementById('mainContent');
+            contentDiv.innerHTML = `
+                <div id="mainCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                         <div class="carousel-item active">
+                        <img src="carrusel2.png" class="d-block w-100" alt="Imagen 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="carrusel3.png" class="d-block w-100" alt="Imagen 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="carrusel4.png" class="d-block w-100" alt="Imagen 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="carrusel5.png" class="d-block w-100" alt="Imagen 4">
+                    </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Siguiente</span>
+                    </a>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
